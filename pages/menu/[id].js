@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
-import React from 'react'
+import DetailsPage from '../../components/templates/DetailsPage';
+
 
 function Details({data}) {
     const router = useRouter();
@@ -8,7 +9,7 @@ function Details({data}) {
         return <h2>Loading page ...</h2>
     }
   return (
-    <div>Details</div>
+    <DetailsPage {...data} />
   )
 }
 
