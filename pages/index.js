@@ -1,7 +1,7 @@
+import HomePage from "../components/templates/HomePage";
+
 export default function Home() {
   return (
-    <>
-      <h1>AminFood</h1>
-    </>
+    <HomePage />
   )
 }
