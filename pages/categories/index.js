@@ -4,7 +4,7 @@ import CategoriesPage from '../../components/templates/CategoriesPage'
 function Categories({data}) {
     console.log(data)
   return (
-    <CategoriesPage />
+    <CategoriesPage data={data} />
   )
 }
 
@@ -21,7 +21,7 @@ export async function getServerSideProps (context) {
     const filtredData = data.filter(item => {
         const defficultyResult  = item.details.filter(detail => detail.Difficulty && detail.Difficulty === difficulty );
         const timeResult = item.details.filter(detail => {
-            const cookingTime = detail['cooking Time'] || "";
+            const cookingTime = detail['Cooking Time'] || "";
             const [timeDetail] = cookingTime.split(' ');
             if (time === 'less' &&timeDetail && +timeDetail<= 30 ){
                 return detail;
